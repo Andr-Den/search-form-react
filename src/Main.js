@@ -1,18 +1,32 @@
 import React from 'react';
 import CardList from './CardList';
 
-class Main extends React.Component {
-  render() {
+import { search } from './search';
+
+function Main() {
+
+  const [searchInput, setSearchInput] = React.useState('')
+
+  function handleSearch(e) {
+    e.preventDefault()
+    search.getAll(searchInput).then(result => {
+      console.log(result)
+    })
+  }
+
+function handleSearchChange(e) {
+  setSearchInput(e.target.value)
+}
+
       return (
         <div>
-          <form>
-            <input />
+          <form onSubmit={handleSearch}>
+            <input onChange={handleSearchChange}/>
             <button type="submit">Поиск</button>
           </form>
           <CardList></CardList>
         </div>
       );
     }
-} 
 
 export default Main;
