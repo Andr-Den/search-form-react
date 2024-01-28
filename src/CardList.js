@@ -1,14 +1,14 @@
 import React from 'react';
 import Card from './Card';
 
-class CardList extends React.Component {
-  render() {
-      return (
-        <div>
-          <Card></Card>
-        </div>
-      );
-    }
-} 
+function CardList({names}) {
+  return (
+    <ul>
+      {names.map((item, index) => (
+        <Card name={item.name} key={index}/>
+      ))}
+    </ul>
+  )
+}
 
 export default CardList;

@@ -6,11 +6,12 @@ import { search } from './search';
 function Main() {
 
   const [searchInput, setSearchInput] = React.useState('')
+  const [names, setNames] = React.useState([])
 
   function handleSearch(e) {
     e.preventDefault()
     search.getAll(searchInput).then(result => {
-      console.log(result)
+      setNames(result)
     })
   }
 
@@ -24,7 +25,7 @@ function handleSearchChange(e) {
             <input onChange={handleSearchChange}/>
             <button type="submit">Поиск</button>
           </form>
-          <CardList></CardList>
+          <CardList names={names}></CardList>
         </div>
       );
     }
