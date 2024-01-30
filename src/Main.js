@@ -28,7 +28,7 @@ function handleSearchChange(e) {
             <button className="form__button" type="submit">Поиск</button>
           </form>
         </div>
-        <CardList names={names} />
+        <CardList className="cardlist" names={names} />
         </>
       );
     }
