@@ -1,18 +1,22 @@
 import React from 'react';
 import CardList from './CardList';
+import Preloader from './Preloader';
 import "./Main.css"
 
 import { search } from './search';
 
 function Main() {
 
-  const [searchInput, setSearchInput] = React.useState('')
-  const [names, setNames] = React.useState([])
+  const [searchInput, setSearchInput] = React.useState('');
+  const [names, setNames] = React.useState([]);
+  const [preload, setPreload] = React.useState(false)
 
   function handleSearch(e) {
     e.preventDefault()
+    setPreload(true)
     search.getAll(searchInput).then(result => {
       setNames(result)
+      setPreload(false)
     })
   }
 
@@ -28,6 +32,7 @@ function handleSearchChange(e) {
             <button className="form__button" type="submit">Поиск</button>
           </form>
         </div>
+        {preload ? <Preloader /> : ''}
         <CardList className="cardlist" names={names} />
         </>
       );
