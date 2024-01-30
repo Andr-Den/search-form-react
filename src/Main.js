@@ -1,5 +1,6 @@
 import React from 'react';
 import CardList from './CardList';
+import "./Main.css"
 
 import { search } from './search';
 
@@ -20,13 +21,15 @@ function handleSearchChange(e) {
 }
 
       return (
-        <div>
-          <form onSubmit={handleSearch}>
-            <input onChange={handleSearchChange}/>
-            <button type="submit">Поиск</button>
+        <>
+        <div className="form">
+          <form className="form__container" onSubmit={handleSearch}>
+            <input className="form__input" onChange={handleSearchChange}/>
+            <button className="form__button" type="submit">Поиск</button>
           </form>
-          <CardList names={names}></CardList>
         </div>
+        <CardList names={names} />
+        </>
       );
     }
 
