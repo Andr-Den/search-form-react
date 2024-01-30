@@ -1,5 +1,10 @@
 # search-form-react
 
+(https://github.com/Andr-Den/search-form-react/raw/main/screenshots/1.png)
+
+(https://github.com/Andr-Den/search-form-react/raw/main/screenshots/2.png)
+
+
 ## About project
 The project implements a search by name from a API
 
