@@ -29,7 +29,7 @@ function handleSearchChange(e) {
         <div className="form">
           <form className="form__container" onSubmit={handleSearch}>
             <input className="form__input" onChange={handleSearchChange}/>
-            <button className="form__button" type="submit">Поиск</button>
+            <button className={`form__button ${searchInput ? 'form__button_active' : ''}`} type="submit">Поиск</button>
           </form>
         </div>
         {preload ? <Preloader /> : ''}

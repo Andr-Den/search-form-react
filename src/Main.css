@@ -26,17 +26,22 @@
   border-radius: 12px;
   border: 2px solid #189439;
   background-color: #ffffff;
-  /* color: #189439; */
   width: 20%;
   font-size: 24px;
 }
 
 .form__button:hover {
-  background-color: grey;
+  background-color: #189439;
   color: #ffffff;
   cursor: pointer;
 }
 
 .form__button_active {
-  background-color: #189439;
+  animation: shadow  1s infinite linear;
 }
+
+@keyframes shadow {
+  from {box-shadow: 0 0 3px rgba(24, 148, 57, 1);}
+  50% {box-shadow: 0 0 30px rgba(24, 148, 57, 1);}
+  to {box-shadow: 0 0 3px rgba(24, 148, 57, 1);}
+  }
